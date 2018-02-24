@@ -5,18 +5,14 @@ var Word = function(wordArray) {
     this.wordArray = wordArray,
     this.wordDisplay =
       function wordDisplay() {
-        for (i = 0; i < wordArray.length; i++){
-          wordArray[i].letterDisplay();
-        }
         console.log(wordArray.join(" "));
+        console.log(wordArray.indexOf(userGuess));
       }
     this.guessed =
       function guessed() {
-        // if(userGuess) {
           for(i = 0; i < wordArray.length; i++) {
             wordArray[i].guessedCorrect();
           }
-        // }
       }
 }
 
@@ -36,7 +32,5 @@ Letter.prototype.toString = function() {
 
   var testWord = new Word ([c, a, t]);
 
-  // console.log(testWord.wordArray);
-  // console.log(testWord.wordArray.join());
-  console.log(testWord.wordDisplay());
-  console.log(testWord.guessed());
+  console.log(testWord.wordDisplay(testWord));
+  console.log(testWord.guessed(testWord));

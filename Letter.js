@@ -1,6 +1,6 @@
 let userGuess = process.argv[2];
 
-    var Letter = function(revealedLetter, guessedYet) {
+    var Letter = function(revealedLetter) {
      this.revealedLetter = revealedLetter,
      this.hiddenLetter = "_",
      this.guessedYet = false,

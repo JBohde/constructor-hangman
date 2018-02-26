@@ -1,17 +1,16 @@
 var Letter = require("./Letter.js");
-let userGuess = process.argv[2];
 
 var Word = function(wordArray) {
     this.wordArray = wordArray,
     this.wordDisplay =
       function wordDisplay() {
         console.log(wordArray.join(" "));
-        console.log(wordArray.indexOf(userGuess));
       }
     this.guessed =
       function guessed() {
           for(i = 0; i < wordArray.length; i++) {
             wordArray[i].guessedCorrect();
+            wordArray[i].letterDisplay();
           }
       }
 }
@@ -26,11 +25,11 @@ Letter.prototype.toString = function() {
     }
 }
 
-  var c = new Letter('c');
-  var a = new Letter('a');
-  var t = new Letter('t');
+  // var c = new Letter('c');
+  // var a = new Letter('a');
+  // var t = new Letter('t');
+  // var testWord = new Word ([c, a, t]);
+  //  testWord.wordDisplay();
+  //  testWord.guessed();
 
-  var testWord = new Word ([c, a, t]);
-
-  console.log(testWord.wordDisplay(testWord));
-  console.log(testWord.guessed(testWord));
+ module.exports = Word;

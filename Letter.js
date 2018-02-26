@@ -1,6 +1,4 @@
-let userGuess = process.argv[2];
-
-    var Letter = function(revealedLetter) {
+  var Letter = function(revealedLetter) {
      this.revealedLetter = revealedLetter,
      this.hiddenLetter = "_",
      this.guessedYet = false,
@@ -8,16 +6,13 @@ let userGuess = process.argv[2];
         function letterDisplay() {
           if(this.guessedYet) {
             console.log(this.revealedLetter);
-            console.log("I'll show you now!");
           } else {
             console.log(this.hiddenLetter);
-            console.log("Still hidden!");
           }
         }
      this.guessedCorrect =  
         function guessedCorrect() {
           if(userGuess === this.revealedLetter) {
-            console.log("you're right!");
             this.guessedYet = true;
           }
           // console.log("you're wrong!");
@@ -28,7 +23,6 @@ let userGuess = process.argv[2];
   // console.log(testLetter.revealedLetter);
   // console.log(testLetter.hiddenLetter);
   // console.log(testLetter.guessedYet);
- 
   // testLetter.letterDisplay();
   // testLetter.guessedCorrect();
 

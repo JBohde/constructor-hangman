@@ -8,10 +8,10 @@ var Word = function(wordArray) {
       }
     this.guessed =
       function guessed() {
-          for(i = 0; i < wordArray.length; i++) {
-            wordArray[i].guessedCorrect();
-            wordArray[i].letterDisplay();
-          }
+        for(i = 0; i < this.wordArray.length; i++) {
+          wordArray[i].guessedCorrect();
+        }
+        console.log(wordArray.join(" "));
       }
 }
 

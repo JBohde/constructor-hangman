@@ -15,7 +15,7 @@
           if(userGuess === this.revealedLetter) {
             this.guessedYet = true;
           }
-          // console.log("you're wrong!");
+          console.log("INCORRECT");
         }
     }
 

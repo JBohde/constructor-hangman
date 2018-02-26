@@ -11,7 +11,7 @@ var inquirer = require('inquirer');
   var word;
   var gameWord = [];
 //   var userGuess;
-  var allowedGuesses;
+//   var guessesLeft;
   var correctGuesses;
   var totalGuesses;
 
@@ -26,8 +26,8 @@ var inquirer = require('inquirer');
     }
     gameWord = new Word(gameWord);
     gameWord.wordDisplay();
+    guessesLeft = 10;
     askLetter();
-    // gameWord.guessed();
   }
 
   function askLetter() {
@@ -39,8 +39,13 @@ var inquirer = require('inquirer');
 
     }).then(answers => {
         userGuess = answers.letter;
-        console.log(userGuess);
         gameWord.guessed();
+        guessesLeft--;
+        console.log(guessesLeft + " guesses left!");
+        askLetter();
+        if (guessesLeft === 0) {
+            console.log("GAME OVER");
+        }
     });
 }
 

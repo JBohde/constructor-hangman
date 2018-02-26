@@ -1,27 +1,28 @@
-  var Letter = function(revealedLetter) {
-     this.revealedLetter = revealedLetter,
-     this.hiddenLetter = "_",
+  
+  var Letter = function(showLetter) {
+     this.showLetter = showLetter,
+     this.hideLetter = "_",
      this.guessedYet = false,
      this.letterDisplay =  
         function letterDisplay() {
           if(this.guessedYet) {
-            console.log(this.revealedLetter);
+            console.log(this.showLetter);
           } else {
-            console.log(this.hiddenLetter);
+            console.log(this.hideLetter);
           }
         }
      this.guessedCorrect =  
         function guessedCorrect() {
-          if(userGuess === this.revealedLetter) {
+          if(userGuess === this.showLetter) {
             this.guessedYet = true;
           }
-          console.log("INCORRECT");
+          // console.log("INCORRECT");
         }
     }
 
   // var testLetter = new Letter ("a", "_", false);
-  // console.log(testLetter.revealedLetter);
-  // console.log(testLetter.hiddenLetter);
+  // console.log(testLetter.showLetter);
+  // console.log(testLetter.hideLetter);
   // console.log(testLetter.guessedYet);
   // testLetter.letterDisplay();
   // testLetter.guessedCorrect();

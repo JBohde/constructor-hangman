@@ -10,8 +10,6 @@ var inquirer = require('inquirer');
   var randomNum = Math.floor(Math.random() * wordBank.length);
   var word;
   var gameWord = [];
-//   var userGuess;
-//   var guessesLeft;
   var correctGuesses;
   var totalGuesses;
 
@@ -41,10 +39,26 @@ var inquirer = require('inquirer');
         userGuess = answers.letter;
         gameWord.guessed();
         guessesLeft--;
-        console.log(guessesLeft + " guesses left!");
+        console.log(guessesLeft + " guesses left!"  + "\n");
         askLetter();
-        if (guessesLeft === 0) {
-            console.log("GAME OVER");
+        if (guessesLeft === 0) { 
+          console.log("GAME OVER");
+
+          inquirer.prompt({
+
+            type: 'list',
+            name: 'play_again',
+            message: "Would you like to play again?",
+            choices: ["Yes", "No"]
+        
+          }).then(answers => {
+              if (answers.play_again === "Yes") {
+                return;
+              } else if (answers.play_again === "No") {
+                console.log("Thanks for playing! Try again soon!");
+                return;
+              }
+          });
         }
     });
 }

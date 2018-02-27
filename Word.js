@@ -9,8 +9,18 @@ var Word = function(wordArray) {
     this.guessed =
       function guessed() {
         for(i = 0; i < this.wordArray.length; i++) {
-          wordArray[i].guessedCorrect();
+            wordArray[i].guessedCorrect();
         }
+        
+        // if (this.guessedYet) {
+        //   console.log("CORRECT!" + "\n");
+        // }
+        // if (wordArray.indexOf(userGuess) === -1) {
+        //   console.log("INCORRECT!" + "\n");
+        //   // guessesLeft--;
+        // } else if (wordArray.indexOf(userGuess) > -1){
+        //   console.log("CORRECT!" + "\n");
+        // }
         console.log(wordArray.join(" ") + "\n");
       }
 }
@@ -24,12 +34,5 @@ Letter.prototype.toString = function() {
       return hiddenToString;
     }
 }
-
-  // var c = new Letter('c');
-  // var a = new Letter('a');
-  // var t = new Letter('t');
-  // var testWord = new Word ([c, a, t]);
-  //  testWord.wordDisplay();
-  //  testWord.guessed();
 
  module.exports = Word;

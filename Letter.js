@@ -5,7 +5,7 @@
      this.guessedYet = false,
      this.letterDisplay =  
         function letterDisplay() {
-          if(this.guessedYet) {
+          if (this.guessedYet) {
             console.log(this.showLetter);
           } else {
             console.log(this.hideLetter);
@@ -16,15 +16,7 @@
           if(userGuess === this.showLetter) {
             this.guessedYet = true;
           }
-          // console.log("INCORRECT");
         }
     }
-
-  // var testLetter = new Letter ("a", "_", false);
-  // console.log(testLetter.showLetter);
-  // console.log(testLetter.hideLetter);
-  // console.log(testLetter.guessedYet);
-  // testLetter.letterDisplay();
-  // testLetter.guessedCorrect();
 
 module.exports = Letter;

@@ -15,6 +15,9 @@
         function guessedCorrect() {
           if(userGuess === this.showLetter) {
             this.guessedYet = true;
+            return true;
+          } else {
+            return false;
           }
         }
     }

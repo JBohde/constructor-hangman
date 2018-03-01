@@ -2,25 +2,27 @@ var Letter = require("./Letter.js");
 
 var Word = function(wordArray) {
     this.wordArray = wordArray,
+    this.guessesLeft = 10;
     this.wordDisplay =
       function wordDisplay() {
         console.log(wordArray.join(" ") + "\n");
       }
     this.guessed =
       function guessed() {
+        var correctLetter = false;
         for(i = 0; i < this.wordArray.length; i++) {
-            wordArray[i].guessedCorrect();
+            if(correctLetter !== wordArray[i].guessedCorrect()) {
+              correctLetter = true;
+            }
         }
-        
-        // if (this.guessedYet) {
-        //   console.log("CORRECT!" + "\n");
-        // }
-        // if (wordArray.indexOf(userGuess) === -1) {
-        //   console.log("INCORRECT!" + "\n");
-        //   // guessesLeft--;
-        // } else if (wordArray.indexOf(userGuess) > -1){
-        //   console.log("CORRECT!" + "\n");
-        // }
+
+        if(correctLetter) {
+          console.log("\n" + "CORRECT!" + "\n");
+        } else {
+          console.log("\n" + "INCORRECT!" + "\n");
+          this.guessesLeft --;
+          console.log(this.guessesLeft + " incorrect guesses left!"  + "\n");
+        }
         console.log(wordArray.join(" ") + "\n");
       }
 }

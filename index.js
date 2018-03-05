@@ -15,6 +15,8 @@ const inquirer = require('inquirer');
 
   function initializeGame() {
   //reset game
+    console.log("*******WELCOME TO HANGMAN*******");
+    console.log("*******MAJOR LEAGUE BASEBALL TEAMS*******");
     getNewWord();
     let word = getNewWord();
     gameWord = [];
@@ -88,7 +90,7 @@ const inquirer = require('inquirer');
         if (answers.play_again === "Yes") {
           initializeGame();
         } else if (answers.play_again === "No") {
-          console.log("\n" + "Thanks for playing! Try again soon!");
+          console.log("\n" + "Thanks for playing! Come back soon!");
          return
         }
     });

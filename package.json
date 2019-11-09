@@ -1,0 +1,23 @@
+{
+  "name": "constructor-hangman",
+  "version": "1.0.0",
+  "description": "## Instructions",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^5.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JBohde/constructor-hangman.git"
+  },
+  "author": "Joshua Bohde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JBohde/constructor-hangman/issues"
+  },
+  "homepage": "https://github.com/JBohde/constructor-hangman#readme"
+}
